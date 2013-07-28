@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>My First Bitstarter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css">
+    <link rel="stylesheet" href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fsocial-buttons.css">    
+    <script src="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fjquery.js"></script>
+    <script src="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap.js"></script>
+    <link href="http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,300,400,600,700,800" 
+          rel="stylesheet" type="text/css">
+    <style type="text/css">
+
+      /* Large desktop */
+      @media (min-width: 980px) {
+	  .container.navbar-wrapper {
+	      margin-bottom: 0;
+	      width: auto;
+            
+	  }
+	  .navbar-inner {
+	      border-radius: 0;
+	    
+	  }
+	  
+	  .linediv-l {
+              border-right: 1px white solid;
+          }
+	  .linediv-r {
+              border-left: 1px white solid;
+	  }
+      }
+
+      @media (min-width: 782px){
+	  .heading, .subheading{
+	      padding-top: 30%;
+	  }
+      }
+      
+      @media (max-width: 782px){
+	  .jumbotron{
+	      margin-left: -20px;
+	      margin-right: -20px;
+	  }
+      }
+      
+      /* Landscape phones and down */
+      @media (max-width: 480px) {
+	  .copy {
+	     padding: 2.5% 10%;
+	  }
+      	  .linediv-l {
+              border-bottom: 1px white solid;
+	  }
+	  .linediv-r {
+              border-top: 1px white solid;
+	  }
+      }
+      
+      /* All form factors */
+      
+      /* Main body and headings
+         ----------------------------------------------------*/
+      body{
+          font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+      }
+      .jumbotron{
+	  padding-left: 0px;
+      padding-right: 0px;
+	  height: 400px;
+	  background-color: rgba(0,82,156,100)
+      }
+      
+      
+      /* CUSTOMIZE THE NAVBAR
+         -------------------------------------------------- */
+      
+      /* Special class on .container surrounding .navbar, used for positioning it into place. */
+      .navbar-wrapper {
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  right: 0;
+	  z-index: 10;
+	  //margin-top: 20px;
+	  margin-bottom: -90px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
+      }
+      .navbar-wrapper .navbar {
+	  
+      }
+      
+      /* Remove border and change up box shadow for more contrast */
+      .navbar .navbar-inner {
+	  border: 0;
+	  -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+	  -moz-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+	  box-shadow: 0 2px 10px rgba(0,0,0,.25);
+      }
+      
+      /* Downsize the brand/project name a bit */
+      .navbar .brand {
+	  padding: 14px 20px 16px; /* Increase vertical padding to match navbar links */
+	  font-size: 16px;
+	  font-weight: bold;
+	  text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+      }
+      
+      /* Navbar links: increase padding for taller navbar */
+      .navbar .nav > li > a {
+	  padding: 15px 20px;
+      }
+      
+      /* Offset the responsive button for proper vertical alignment */
+      .navbar .btn-navbar {
+	  margin-top: 10px;
+      }
+      
+      .heading, .subheading {
+	  color: rgba(190,190,190,100);
+	  font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+	  padding-top: 15%;
+      }
+      p.lead {
+	  color: rgba(190,190,190,100);
+	  font-size: 24px;
+	  line-height: 30px;
+      }
+      p {
+	  font-size: 18px;
+	  line-height: 24px;
+      }
+      
+      /* Video pitch and Action */
+      .pitch {
+	  padding: 2.5% 0%;
+      }
+      .order {
+	  padding: 2% 0%;
+      }
+      .actions {
+	  background-color: #343434;
+	  padding: 3% 0%;
+      }
+      .video, .thermometer, .order, .social, .statistics {
+	  text-align: center;
+      }
+      .statistics h3, .statistics p {
+	  color: white;
+      }
+      
+      /* Marketing Copy and Footer */
+      .copy {
+	  padding-top: 2.5%;
+	  padding-bottom: 2.5%;
+	  text-align: justify;
+      }
+      .asset {
+	  padding: 2.5% 0%;
+      }
+      .footer {
+	  color: #cccccc;
+	  text-align: center;
+      }
+      .footer p {
+	  font-size: 11px;
+      }
+      .footer a {
+	  color: #ccccff;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- Mobile-friendly navbar adapted from example. -->
+    <!-- http://twitter.github.io/bootstrap/examples/starter-template.html -->
+    <div class="navbar-wrapper">
+      <div class="container">
+	<div class="row-fluid">
+	  <div class="span10 offset1">
+	    <div class="navbar navbar-inverse">
+	      <div class="navbar-inner">
+		<div class="container">
+		  <button type="button" class="btn btn-navbar"
+			  data-toggle="collapse" data-target=".nav-collapse">
+		    <span class="icon-bar"></span>
+		    <span class="icon-bar"></span>
+		    <span class="icon-bar"></span>
+		  </button>
+		  <a class="brand" href="#">Flock</a>
+		  <div class="nav-collapse collapse">
+		    <ul class="nav">
+		      <li class="active"><a href="#">Home</a></li>
+		      <li><a href="#about">About</a></li>
+		      <li><a href="#contact">Contact</a></li>
+		    </ul>
+		  </div>
+		</div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+      </div>
+    </div>
+
+    <div class="jumbotron masthead">
+      <div class="container">
+	<div class="row-fluid">
+	  <div class="span5 offset1">
+	    <h1 class="heading">Flock</h1>
+	    <p class="lead">A task manager for many teams with many projects</p>
+	  </div>
+	</div>
+      </div> 
+    </div>
+    
+    <!-- We use row-fluid inside containers to achieve a resizable layout. -->
+    <!-- blogs.endjin.com/2013/04/tips-for-implementing-responsive-designs-using-bootstrap/ -->
+    <!-- http://stackoverflow.com/a/12270322 -->
+    <div class="container">
+      <div class="row-fluid subheading">
+        <div class="span12">
+          <!-- Special typography from Bootstrap for lead paragraph. -->
+          <!-- http://twitter.github.io/bootstrap/base-css.html#typography -->
+          <p class="lead">A task manager for many teams with many projects.</p>
+        </div>
+      </div>
+      <div class="row-fluid pitch">
+        <div class="span5 offset1 video">
+          <img class="img-polaroid" src="http://i.imgur.com/QgxbV6C.png">
+        </div>
+
+        <!-- We define a new 'actions' div to contain statistics, order, and share buttons.-->
+        <div class="span5 actions">
+          <div class="span8 offset2">
+            <div class="statistics">
+              <div class="span4">
+                <!-- linediv-l and linediv-r give dividing lines that look
+                different in horizontal and vertical layouts, illustrating
+                media queries. -->
+                <div class="linediv-l">
+                <h3>1000</h3> <p>backers</p>
+                </div>
+              </div>
+              <div class="span4">
+                <div class="linediv-c">
+                  <h3>$0</h3> <p>of $500</p>
+                </div>
+              </div>
+              <div class="span4">
+                <div class="linediv-r">
+                <h3>10</h3> <p>days left</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="span10 offset1">
+            <!-- Bootstrap progress bar -->
+            <!-- http://twitter.github.io/bootstrap/components.html#progress -->
+            <div class="thermometer progress active">
+              <div class="bar bar-success" style="width: 60%;"></div>
+              <div class="bar bar-warning" style="width: 40%;"></div>
+            </div>
+          </div>
+          <div class="span6 offset3 order">
+            <!-- Standard Bootstrap button. -->
+            <!-- http://twitter.github.io/bootstrap/base-css.html#buttons -->
+            <button class="btn btn-success btn-large">Preorder</button>
+          </div>
+          <div class="span8 offset2 social">
+            <!-- Social buttons are not included in default Bootstrap. -->
+            <!-- See: http://noizwaves.github.io/bootstrap-social-buttons -->
+            <button class="btn btn-twitter"><i class="icon-twitter"></i> | Twitter</button>
+            <button class="btn btn-facebook"><i class="icon-facebook"></i> | Facebook</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Beyond this part the marketing copy begins. -->
+      <!-- https://developer.mozilla.org/en-US/docs/Web/CSS/text-align -->
+      <!-- http://twitter.github.io/bootstrap/base-css.html#images -->
+      <!-- http://placehold.it -->
+      <div class="row-fluid section1">
+        <div class="span5 offset1 asset">
+          <img class="img-polaroid" src="http://i.imgur.com/QgxbV6C.png">
+        </div>
+        <div class="span5 copy">
+          <p>
+	    Flock is a kanban board that enables agile development in
+	    enterprise organizations. Each team creates unique workflows
+	    while keeping visibility on the ongoing tasks of other teams.
+	    Project management and testers can create workflows without
+	    losing sight of ongoing efforts that can span multiple
+	    developers and multiple teams. The unique tasks design in
+	    Flock allows management to have high level views of projects and
+	    developers to keep their day to day coordination. 
+          </p>
+        </div>
+      </div>
+
+      <div class="row-fluid section2">
+        <div class="span5 offset1 copy copy-right">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+            porta, dui sagittis hendrerit rutrum, nunc leo tempus nisl, eu
+            mollis justo velit at nunc. Fusce nec egestas sem. Donec
+            fringilla ante lectus, a pellentesque lacus dignissim ac. Sed
+            volutpat lorem ut congue malesuada. In facilisis scelerisque
+            turpis sed lacinia. Donec in orci lectus. Donec auctor semper
+            quam, eget rhoncus purus fringilla id. Phasellus id nibh eu
+            risus ultrices adipiscing.  Lorem ipsum dolor sit amet,
+            consectetur adipiscing elit. Donec porta, dui sagittis hendrerit
+            rutrum, nunc leo tempus nisl, eu mollis justo velit at
+            nunc. Fusce nec egestas sem. Donec fringilla.
+          </p>
+        </div>
+        <div class="span5 asset">
+          <img class="img-polaroid" src="http://placehold.it/480x300">
+        </div>
+      </div>
+
+      <!-- For the FAQ, we introduce a little bit of JS, using the accordion. -->
+      <!-- This brings in jquery.js and bootstrap.js as dependencies. -->
+      <!-- http://twitter.github.io/bootstrap/javascript.html#collapse -->
+      <div class="row-fluid faq">
+          <div class="span10 offset1">
+            <h3>FAQ</h3>
+            <div class="accordion" id="accordion2">
+              <div class="accordion-group">
+                <div class="accordion-heading">
+                  <a class="accordion-toggle" data-toggle="collapse"
+                     data-parent="#accordion2" href="#collapseOne">
+                    What does FAQ stand for?
+                  </a>
+                </div>
+                <div id="collapseOne" class="accordion-body collapse">
+                  <div class="accordion-inner">
+                    Frequently Asked Question.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-group">
+                <div class="accordion-heading">
+                  <a class="accordion-toggle" data-toggle="collapse"
+                     data-parent="#accordion2" href="#collapseTwo">
+                    What's a Frequently Asked Question?
+                  </a>
+                </div>
+                <div id="collapseTwo" class="accordion-body collapse">
+                  <div class="accordion-inner">
+                    A question which is commonly asked by users.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+      </div>
+
+      <!-- Not crucial, but we put this under a CC By-SA 3.0 license. -->
+      <!-- http://creativecommons.org/licenses/ -->
+      <div class="row-fluid footer">
+        <div class="span12">
+          <p>This work is licensed under
+            the <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC
+              By-SA 3.0
+            </a>, without all the cruft that would otherwise be
+            put at the bottom of the page.</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
