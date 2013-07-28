@@ -5,9 +5,21 @@
     <title>Flock: From Backlog to Tasks</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/css/bootstrap.min.css">
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css">
-    
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu|Fugaz+One' rel='stylesheet' type='text/css'>
     <style>
 
+      body{
+            font-family: 'Ubuntu', sans-serif;
+      }
+
+      .navbar-brand{
+            font-family: 'Fugaz One', cursive;
+      }
+
+      .card-heading{
+      font-family: 'Ubuntu', sans-serif;
+      }
+      
       .jumbotron{
       height: 400px;
       background-color: rgba(192,57,43,.90);
@@ -23,10 +35,20 @@
       
       .heading{
       margin-top: 60px;
+      font-family: 'Fugaz One', cursive;
       }
 
       .navbar{
       border-radius: 0px;
+      }
+
+      img{
+      margin-top: auto;
+      width: 100%;
+      }
+
+      .card{
+      text-align:center;
       }
       
       .btn-outline {
@@ -42,6 +64,7 @@
         transition: all .1s ease-in-out;
       width: 250px;
       }
+
       .btn-outline:hover,
       .btn-outline:active {
         color: #E74C3C;
@@ -87,22 +110,22 @@
 <div class="container">  
     <div class="body-content">
       <div class="row">
-	<div class="col-lg-4">
-	  <h2>Developers</h2>
-	  <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
-	  <p>Focus on individuals</p>
-	</div>
-
-	<div class="col-lg-4">
-	  <h2>Managers</h2>
-	  <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
-	  <p>Focus on individuals</p>
+	<div class="col-lg-4 card">
+	  <h2 class="card-heading">Developers</h2>
+	  <img src="http://i.imgur.com/zchjAkY.png"/>
+	  <p>Developers can manage workflow easily without project management tools getting in the way.</p>
 	</div>
 	
-	<div class="col-lg-4">
-	  <h2>Teams</h2>
-	  <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
-	  <p>Focus on individuals</p>
+	<div class="col-lg-4 card">
+	  <h2 class="card-heading">Managers</h2>
+	  <img src="http://i.imgur.com/kQDxpCl.png"/>
+	  <p>Managers can monitor the progress of projects while maintaining a custom workflow. </p>
+	</div>
+	
+	<div class="col-lg-4 card">
+	  <h2 class="card-heading">Teams</h2>
+	  <img src="http://i.imgur.com/Bbka0fl.png"/>
+	  <p>Members of multiple teams can work together as one.</p>
 	</div>
       </div>
       
